@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.0/css/simple-line-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css"
+    />
+    <style>
+      body,
+      html {
+          height: 100%;
+          width: 100%;
+      }
+      .sp-loading {
+          text-align: center;
+          max-width: 270px;
+          padding: 15px;
+          border: 5px solid #eee;
+          border-radius: 3px;
+          font-size: 12px;
+          color: #888;
+      }
+      .sp-wrap {
+          display: none;
+          line-height: 0;
+          font-size: 0;
+          background: #eee;
+          border: 5px solid #eee;
+          border-radius: 3px;
+          position: relative;
+          margin: 0 25px 15px 0;
+          float: left;
+          max-width: 300px;
+      }
+      .sp-thumbs {
+          text-align: left;
+          display: inline-block;
+      }
+      .sp-thumbs img {
+          min-height: 50px;
+          min-width: 50px;
+          max-width: 50px;
+      }
+      .sp-thumbs a:link,
+      .sp-thumbs a:visited {
+          width: 50px;
+          height: 50px;
+          overflow: hidden;
+          opacity: 0.3;
+          display: inline-block;
+          background-size: cover;
+          background-position: center;
+          -webkit-transition: 0.2s ease-out;
+          -moz-transition: 0.2s ease-out;
+          -ms-transition: all 0.2s ease-out;
+          -o-transition: 0.2s ease-out;
+          transition: 0.2s ease-out;
+      }
+      .sp-thumbs a:hover {
+          opacity: 1;
+      }
+      .sp-current,
+      .sp-thumbs a:active {
+          opacity: 1 !important;
+          position: relative;
+      }
+      .sp-large {
+          position: relative;
+          overflow: hidden;
+          top: 0;
+          left: 0;
+      }
+      .sp-large a img {
+          max-width: 100%;
+          height: auto;
+      }
+      .sp-large a {
+          display: block;
+      }
+      .sp-zoom {
+          position: absolute;
+          left: -50%;
+          top: -50%;
+          cursor: -webkit-zoom-in;
+          cursor: -moz-zoom-in;
+          cursor: zoom-in;
+          display: none;
+      }
+      .sp-lightbox {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.9);
+          z-index: 1031;
+          display: none;
+          cursor: pointer;
+      }
+      .sp-lightbox img {
+          position: absolute;
+          margin: auto;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          max-width: 90%;
+          max-height: 90%;
+          border: 2px solid #fff;
+      }
+      #sp-next,
+      #sp-prev {
+          position: absolute;
+          top: 50%;
+          margin-top: -25px;
+          z-index: 501;
+          color: #fff;
+          padding: 14px;
+          text-decoration: none;
+          background: #000;
+          border-radius: 25px;
+          border: 2px solid #fff;
+          width: 50px;
+          height: 50px;
+          box-sizing: border-box;
+          transition: 0.2s;
+      }
+      #sp-prev {
+          left: 10px;
+      }
+      #sp-prev:before {
+          content: "";
+          border: 7px solid transparent;
+          border-right: 15px solid #fff;
+          position: absolute;
+          top: 16px;
+          left: 7px;
+      }
+      #sp-next {
+          right: 10px;
+      }
+      #sp-next:before {
+          content: "";
+          border: 7px solid transparent;
+          border-left: 15px solid #fff;
+          position: absolute;
+          top: 16px;
+          left: 18px;
+      }
+      #sp-next:hover,
+      #sp-prev:hover {
+          background: #444;
+      }
+
+
+      .img-container img{
+          height: 496px;
+          object-fit: cover;
+      }
+      .gradient-list i{
+          float: right;
+      }
+      /*** FONTS ***/
+      /*** VARIABLES ***/
+      /* Colors */
+      /*** EXTEND ***/
+      /* box-shadow */
+      ol.gradient-list > li, ol.gradient-list > li::before {
+          box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+      }
+      /*** STYLE ***/
+      *, *:before, *:after {
+          box-sizing: border-box;
+      }
+
+      .skin-care .block-heading p{
+        max-width:590px;
+      }
+
+      .skin-care h3{
+        font-weight:bold;
+        font-size: 39px;
+      }
+      .btn-visit{
+        width: 320px;
+        margin-left:0px;
+      }
+      ol.gradient-list {
+          counter-reset: gradient-counter;
+          list-style: none;
+          margin: 1.75rem 0;
+          padding-left: 1rem;
+      }
+      ol.gradient-list > li {
+          background: white;
+          border-radius: 0 0.5rem 0.5rem 0.5rem;
+          counter-increment: gradient-counter;
+          margin-top: 1rem;
+          min-height: 3rem;
+          padding: 1rem 1rem 1rem 3rem;
+          position: relative;
+      }
+      ol.gradient-list > li::before, ol.gradient-list > li::after {
+          background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
+          border-radius: 1rem 1rem 0 1rem;
+          content: '';
+          height: 3rem;
+          left: -1rem;
+          overflow: hidden;
+          position: absolute;
+          top: -1rem;
+          width: 3rem;
+      }
+      ol.gradient-list > li::before {
+          align-items: flex-end;
+          content: counter(gradient-counter);
+          color: #1d1f20;
+          display: flex;
+          font: 900 1.5em/1 'Montserrat';
+          justify-content: flex-end;
+          padding: 0.125em 0.25em;
+          z-index: 1;
+      }
+      ol.gradient-list > li:nth-child(10n+1):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+2):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0.4) 0%, rgba(253, 220, 50, 0.4) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+3):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0.6) 0%, rgba(253, 220, 50, 0.6) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+4):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0.8) 0%, rgba(253, 220, 50, 0.8) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+5):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 1) 0%, rgba(253, 220, 50, 1) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+6):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0.8) 0%, rgba(253, 220, 50, 0.8) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+7):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0.6) 0%, rgba(253, 220, 50, 0.6) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+8):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0.4) 0%, rgba(253, 220, 50, 0.4) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+9):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%);
+      }
+      ol.gradient-list > li:nth-child(10n+10):before {
+          background: linear-gradient(135deg, rgba(162, 237, 86, 0) 0%, rgba(253, 220, 50, 0) 100%);
+      }
+      ol.gradient-list > li + li {
+          margin-top: 2rem;
+      }
+
+
+      @media screen and (max-width: 400px) {
+          .sp-wrap {
+              margin: 0 0 15px;
+          }
+          #sp-next,
+          #sp-prev {
+              top: auto;
+              margin-top: 0;
+              bottom: 25px;
+          }
+      }
+      .page-footer {
+        background-color: #fff;
+        padding-top: 30px;
+        text-align: center;
+      }
+      .page-footer.dark {
+        background-color: #2b2f31;
+      }
+      .page-footer .footer-copyright {
+        background-color: #fff;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        text-align: center;
+        margin-top: 50px;
+        border: 1px solid #ededed;
+      }
+      .page-footer.dark .footer-copyright {
+        background-color: #222425;
+        border-color: #222425;
+      }
+      .page-footer .footer-copyright p {
+        margin: 10px;
+        color: #7d8288;
+      }
+      .page-footer.dark .footer-copyright p {
+        color: #ccc;
+      }
+      .page-footer ul {
+        list-style-type: none;
+        padding-left: 0;
+        line-height: 1.7;
+      }
+      .page-footer h5 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 30px;
+      }
+      .page-footer.dark h5 {
+        color: #fff;
+      }
+      .page-footer a {
+        color: #53595f;
+        text-decoration: none;
+      }
+      .page-footer.dark a {
+        color: #d2d1d1;
+      }
+      .page-footer a:focus,
+      .page-footer a:hover {
+        text-decoration: none;
+        color: #1d2125;
+      }
+      .page-footer.dark a:focus,
+      .page-footer.dark a:hover {
+        color: #fff;
+      }
+      @media (min-width: 576px) {
+        .page-footer {
+          text-align: left;
+        }
+      }
+      @media (min-width: 768px) {
+        .page-footer ul li {
+          position: relative;
+          padding-left: 10px;
+        }
+        .page-footer ul li:after,
+        .page-footer ul li:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 2px;
+          height: 6px;
+          border-radius: 2px;
+          background-color: #007bff;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        .page-footer ul li:before {
+          top: 9px;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        .page-footer ul li:after {
+          top: 13px;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+  </head>
+  <style>
+    
+    * {
+      --font-family-sans-serif: "Montserrat",sans-serif;
+      --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    }
+    .header {
+      position: fixed;
+      z-index: 1000;
+      width: 100%;
+      top: 0;
+    }
+    .header__sign-in {
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    .header__sign-in i {
+      font-size: 24px;
+    }
+    .promobar {
+      width: 100%;
+      padding: 8px 20px;
+      background: #1d2733;
+      text-align: center;
+      color: white;
+      z-index: 1200;
+    }
+    .navbar {
+      /* position: fixed; */
+      /* top: 30; */
+      background-color: transparent;
+      padding-left: 5%;
+      padding-right: 5%;
+      z-index: 1500;
+    }
+    .navbar .header__logo {
+      z-index: 1500;
+      /* margin-top: -5px; */
+      margin-bottom: -30px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    .navbar a {
+      color: white !important;
+      font-size: 18px;
+    }
+    .navbar.scroll {
+      background-color: #ffffff;
+    }
+    nav.scroll a {
+      color: rgb(25, 25, 27) !important;
+    }
+    .promobar p {
+      margin-bottom: 0;
+    }
+    .navbar .ourarea-dropMenu {
+      width: 100vw;
+      position: fixed !important;
+      top: unset !important;
+      z-index: 2000;
+      border: none;
+    }
+    .navbar .ourarea-dropMenu .dropmenu {
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      padding: 0 60px 0 60px;
+    }
+    .navbar .ourarea-dropMenu li a {
+      color: rgb(25, 25, 27) !important;
+      display: block;
+    }
+    .dropmenu-innermenu ul {
+      padding: 0;
+      margin: 0;
+    }
+    .dropmenu-innermenu li {
+      text-decoration: none;
+      list-style: none;
+      margin: 0 0 16px;
+    }
+    .dropmenu-innermenu .dropmenu-innermenu-heading {
+      color: #484c51;
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+    /*  */
+
+    .btn__style {
+      width: 100%;
+      background-color: rgb(225, 96, 54) !important;
+      border-color: rgb(225, 96, 54) !important;
+      color: #ffffff;
+      font-size: 24px;
+      outline: none;
+      display: inline-block;
+      border-radius: 8px;
+      padding: 18px 24px;
+      -webkit-transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+      -o-transition: 0.2s color, 0.2s border-color, 0.2s background-color;
+      transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+      text-align: center;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn__style:hover {
+      text-decoration: none;
+      color: #FFF;
+    }
+
+    .btn__color {
+      background-color: rgb(225, 96, 54) !important;
+      border-color: rgb(225, 96, 54) !important;
+    }
+
+    .header__second-level__more {
+      padding: 40px 60px 40px 80px;
+    }
+    .header__second-level__more .header__start {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .header__start {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+    .header__second-level__more .header__start__heading {
+      font-size: 22px;
+    }
+    .header__start__heading {
+      margin: 0 10px 0 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .contact__options {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    .contact__options li {
+      display: block;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+    .contact__subheader {
+      color: #484c51;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0 0 4px;
+    }
+    .contact__options a {
+      color: #18191b;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .header__second-level a {
+      text-decoration: none;
+    }
+    .contact__options li:last-child {
+      margin-bottom: 0;
+    }
+    .contact__subheader {
+      color: #484c51;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0 0 4px;
+    }
+    .contact__options a {
+      color: #18191b;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .work-section {
+      padding-top: 120px;
+    }
+    .wp-block-video {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .wp-block-video [poster] {
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+    .wp-block-video video {
+      max-width: 100%;
+    }
+    .dot-style {
+      width: 50% !important;
+      border-top: 5px dotted #ffffff;
+      margin: 10px 5px 0 5px;
+    }
+    .number {
+      height: 30px;
+      width: 35px;
+      border-radius: 50px;
+      background-color: #ffffff;
+      text-align: center;
+      font-size: 20px;
+      padding: 0 0 0 0;
+    }
+
+    .backsection {
+      background-color: #f9ea8f;
+      background: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
+      padding-top: 100px;
+      padding-bottom: 30px;
+    }
+    .contentbox {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .startfreebtn {
+      background-color: rgb(225, 96, 54);
+      border-color: rgb(225, 96, 54);
+      font-size: 24px;
+      outline: none;
+      display: inline-block;
+      border-radius: 8px;
+      padding: 18px 24px;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+    .startfreebtn a {
+      font-weight: 600;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .al-center {
+      margin: 0 auto;
+    }
+    .small-adv-section {
+      margin-top: 30px;
+    }
+    .small-adv-section p {
+      color: white;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      text-align: center;
+    }
+    .advitem {
+      padding: 20px;
+    }
+    .advitem a {
+      display: block;
+      text-decoration: none;
+      background-position: 50% 100%;
+      background-size: cover;
+      position: relative;
+      padding: 16px 30px 0;
+      min-height: 220px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .advitem a.skincare {
+      background-image: url(https://www.getroman.com/wp-content/uploads/2020/07/condition-tile-ed.jpg);
+    }
+    .advitem a.hair {
+      background-image: url(https://www.getroman.com/wp-content/uploads/2020/07/condition-tile-hair-loss.jpg);
+    }
+    .advitem a h3 {
+      color: white;
+      font-weight: 600;
+      line-height: 130%;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    .advitem a span {
+      color: rgb(225, 96, 54) !important;
+      font-size: 18px;
+    }
+    .advitem a strong {
+      padding: 10px 20px;
+      background: -webkit-linear-gradient(359.2deg, #7c1e13, #f65b4a);
+      background: -o-linear-gradient(359.2deg, #7c1e13 0, #f65b4a 100%);
+      background: linear-gradient(90.8deg, #7c1e13, #f65b4a);
+      border-radius: 0 0 4px 4px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      font-size: 14px;
+      line-height: 130%;
+      font-weight: 400;
+      color: #fff;
+    }
+    /* common */
+
+    .justify-space {
+      justify-content: space-around;
+    }
+
+    .mt-100 {
+      margin-top: 100px;
+    }
+    .mb-40 {
+      margin-bottom: 40px;
+    }
+
+    .card-content {
+      background-color: #1d2733;
+      text-align: center;
+      padding: 8px;
+      color: #FFF;
+      margin-top: 15px;
+      border-radius: 50px;
+    }
+
+    .center {
+      margin: 0 auto;
+      width: 48px;
+      height: 48px;
+    }
+    /*  */
+
+    .carosel__size {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: 64em) {
+      .contact--horizontal .contact__options li {
+        margin: 0 0 0 24px;
+        padding-left: 24px;
+        border-left: 1px solid #e0e0e0;
+      }
+      .contact--horizontal .contact__options li:first-child {
+        padding-left: 0;
+        margin: 0;
+        border-left: 0;
+      }
+      .contact--horizontal .contact__options li {
+        margin: 0 0 0 24px;
+        padding-left: 24px;
+        border-left: 1px solid #e0e0e0;
+      }
+      .contact--horizontal .contact__options {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .hidden-mobile {
+        display: none;
+      }
+      .mobile__width {
+        width: 100%;
+      }
+      .navbar-collapse ul .btn__login {
+        position: absolute;
+        right: 25px;
+      }
+    }
+    @media screen and (max-width: 1024px) {
+      .dot-style {
+        width: 50% !important;
+        border-top: 5px dotted #ffffff00;
+        margin: 10px 5px 0 5px;
+      }
+    }
+
+    .skin-care, .slider, .about-us {
+      background: linear-gradient(to bottom right, #85a8d5 0%, #e7e797 100%) !important;
+    }
+
+    .btn__size {
+      width: 100% !important;
+      padding: 15px 0;
+    }
+    .btn__start {
+      color: #007bff !important
+    }
+
+    .btn__get {
+      color: #fff !important;
+      width: 200px;
+    }
+    .img__size {
+      width: 24px;
+      height: 24px;
+    }
+    .img__size img {
+      height: 24px;
+      width: 24px;
+    }
+
+    .nav__bottom {
+      justify-content: center;
+    }
+    /* .nav__mobile {
+      min-width: 500px;
+    } */
+
+    .features {
+      background-color: #f9ea8f;
+      background: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
+    }
+
+    .icon__size {
+      width: 48px;
+      height: 48px;
+    }
+
+    .text__color {
+      color: rgb(225, 96, 54) !important;
+    }
+
+    .dot__left1 {
+    display: flex; 
+    flex-direction: row;
+    margin-right: -3.5%;
+    }
+    .dot__left2 {
+      display: flex;
+      flex-direction: row;
+      margin-left: -3.5%;
+      margin-right: -3.5%;
+                
+    }
+    .dot__left3 {
+      display: flex; 
+      flex-direction: row; 
+      margin-left: -3.5%
+    }
+
+    .dot__width {
+      width: 50% !important;
+    }
+    .feature-box {
+      padding: 15px 20px 15px 70px;
+    }
+    .feature-box .icon {
+      font-size: 30px;
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      width: 30px;
+      text-align: center;
+      color: #3b99e0;
+    }
+    .feature-box h4 {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .feature-box p {
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+    .text-info {
+      color: #3b99e0 !important;
+    }
+    a.text-info:focus,
+    a.text-info:hover {
+      color: #1c72b2 !important;
+    }
+    .clean-block {
+      padding-bottom: 50px;
+    }
+    .clean-block.dark {
+      background-color: #f6f6f6;
+    }
+    .clean-block.blue {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .clean-block.blue input {
+      border: none;
+    }
+    .clean-block .block-heading {
+      padding-top: 50px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .clean-block .block-heading p {
+      text-align: center;
+      max-width: 420px;
+      margin: auto;
+      opacity: 0.7;
+    }
+    .clean-block.dark .block-heading p {
+      opacity: 0.8;
+    }
+    .clean-block .block-heading h1,
+    .clean-block .block-heading h2,
+    .clean-block .block-heading h3 {
+      margin-bottom: 1.2rem;
+    }
+    .clean-block .block-content,
+    .clean-block .content {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+      background-color: #fff;
+    }
+    .clean-block .block-content {
+      padding: 40px;
+    }
+    .clean-block.clean-hero {
+      position: relative;
+      text-align: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding-bottom: 0;
+    }
+    .clean-block.clean-hero:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: currentColor;
+      z-index: 1;
+    }
+    .clean-block.clean-hero .text {
+      max-width: 640px;
+      color: #fff;
+      z-index: 2;
+      padding: 40px 15px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    }
+    .clean-block.clean-hero h2 {
+      margin-bottom: 30px;
+    }
+    .clean-block.clean-hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+  </style>
+
+  <body>
+    <div class="header">
+      <div class="promobar">
+        <p>
+          Get $15 off your first order of ED treatment:
+          <a href="https://start.ro.co/roman/ed"
+            ><b class="btn__start">Start now</b></a
+          >
+        </p>
+      </div>
+      <!-- nav bar -->
+      <nav id="navbar" class="navbar navbar-expand navbar-light">
+        <div class="container">
+          <a class="header__logo navbar-brand" href="https://www.getroman.com">
+            <img
+              src="https://www.jootoor.com/wp-content/uploads/2019/03/Logo-Design.jpg"
+              alt="roman"
+              width="110"
+              height="110"
+              class="header__logo__img header__logo__img--dark"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto hidden-mobile">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Consult</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">More Info</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right mobile__width">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle ourarealink"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Our Area
+                </a>
+                <div
+                  class="dropdown-menu ourarea-dropMenu"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <div class="row dropmenu">
+                    <div class="dropmenu-innermenu col-md-6 col-lg-3">
+                      <h4 class="dropmenu-innermenu-heading">Skin</h4>
+                      <div class="menu-sexual-health-container">
+                        <ul id="menu-sexual-health" class="menu">
+                          <li
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3879"
+                          >
+                            <a
+                              href="https://www.getroman.com/premature-ejaculation/"
+                              >Acne & Acne Scars</a
+                            >
+                          </li>
+                          <li
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2903"
+                          >
+                            <a href="https://www.getroman.com/genital-herpes/"
+                              >Anti Aging</a
+                            >
+                          </li>
+                          <li
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2902"
+                          >
+                            <a href="https://www.getroman.com/cold-sores/"
+                              >Pigmentation</a
+                            >
+                          </li>
+                          <li
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2902"
+                          >
+                            <a href="https://www.getroman.com/cold-sores/"
+                              >Damaged and Sensitive Skin</a
+                            >
+                          </li>
+                          <li
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2902"
+                          >
+                            <a href="https://www.getroman.com/cold-sores/"
+                              >Stretch Marks</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="dropmenu-innermenu col-md-6 col-lg-3">
+                      <h4 class="dropmenu-innermenu-heading">Hair</h4>
+                      <div class="menu-hair-skin-container">
+                        <ul id="menu-hair-skin" class="menu">
+                          <li
+                            id="menu-item-2905"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2905"
+                          >
+                            <a href="https://www.getroman.com/hair-loss/"
+                              >Hair Fall
+                            </a>
+                          </li>
+                          <li
+                            id="menu-item-2905"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2905"
+                          >
+                            <a href="https://www.getroman.com/hair-loss/"
+                              >Hair Loss
+                            </a>
+                          </li>
+                          <li
+                            id="menu-item-19572"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19572"
+                          >
+                            <a href="https://www.getroman.com/dandruff/"
+                              >Dandruff</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-19049"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19049"
+                          >
+                            <a href="https://www.getroman.com/skincare/"
+                              >Itchy Scalp</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-19572"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19572"
+                          >
+                            <a href="https://www.getroman.com/dandruff/"
+                              >Hair Damage, Frizzy Hair</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-19572"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19572"
+                          >
+                            <a href="https://www.getroman.com/dandruff/"
+                              >Bald Patches</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="dropmenu-innermenu col-md-12 col-lg-5">
+                      <div class="header__second-level__more">
+                        <div class="header__start">
+                          <p class="header__start__heading">Ready to start?</p>
+  
+                          <a
+                            href="#ro-modal-3886"
+                            class="btn__style btn__get btn__color text-white"
+                          >
+                            Get started
+                          </a>
+                        </div>
+  
+                        <div class="contact contact--horizontal">
+                          <ul class="contact__options">
+                            <li>
+                              <p class="contact__subheader">
+                                Call or text us (Mon – Fri: 9:30am - 9pm EST).
+                                Message and data rates may apply.
+                              </p>
+  
+                              <a href="tel:4243476299">(424) 347-6299</a>
+                            </li>
+  
+                            <li>
+                              <p class="contact__subheader">Email us anytime</p>
+  
+                              <a
+                                href="/cdn-cgi/l/email-protection#593a382b3c192b36773a36"
+                                ><span
+                                  class="__cf_email__"
+                                  data-cfemail="345755465174465b1a575b"
+                                  >[email&#160;protected]</span
+                                ></a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item btn__login">
+                <a href="https://my.ro.co/" class="nav-link header__sign-in">
+                  <i class="las la-user-circle"></i>
+                  <span class="header__sign-in__text">Login</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main class="page landing-page">
+      
+    <div class="backsection">
+      <div class="container contentbox">
+
+          <!-- adv -->
+          <div class="container-fluid mt-100">
+              <div class="row justify-space">
+                  <div class="col-md-12 col-lg-7">
+                      <h1 class="wp-block-ro-header-double spacing-block-mt-07 spacing-block-mb-02">
+                          <h1 class="h1 text-light font-weight-bold">You are in good hands,</h1>
+
+                          <h1 class="text-light h1 ">wherever you are.</h1>
+                      </h1>
+
+                      <p class="text-light">
+                          From the online visit to contact-free delivery with <br />
+                          ongoing care, expect a seamless experience.
+                      </p>
+                  </div>
+
+                  <div class="col-md-12 col-lg-5">
+                      <div class="startfreebtn">
+                          <a href="#ro-modal-3886">Start free online visit</a>
+                      </div>
+                      <div class="row">
+                          <div class="col-4 small-adv-section">
+                              <div class="al-center img__size" >
+                                  <img alt=""
+                                      src="https://www.getroman.com/wp-content/uploads/2019/08/shield@2x-1.png"
+                                       loading="eager" />
+                              </div>
+                              <p>
+                                  The best healthcare professionals
+                              </p>
+                          </div>
+                          <div class="col-4 small-adv-section">
+                              <div class="al-center img__size" >
+                                  <img alt=""
+                                      src="https://www.getroman.com/wp-content/uploads/2019/08/settings@2x.png"
+                                       loading="eager" />
+                              </div>
+                              <p>
+                                  Personalized treatment
+                              </p>
+                          </div>
+                          <div class="col-4 small-adv-section">
+                              <div class="al-center img__size" >
+                                  <img alt=""
+                                      src="https://www.getroman.com/wp-content/uploads/2019/08/medication-certified@2x-1.png"
+                                       loading="eager" />
+                              </div>
+                              <p>
+                                  Licensed pharmacy
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row nav__bottom">
+                  <div class="col-md-7 nav__mobile" >
+                      <div class="row">
+                          <div class="col-sm-12 col-md-6 advitem">
+                              <a class="skincare" href="https://www.getroman.com/ed/">
+                                  <h3 class="">Skincare</h3>
+                                  <span class="text-link is-style-default p-large">Learn more <i
+                                          class="las la-angle-right"></i></span>
+                                  <strong class="promo">Get up to <b>$15 off</b> your first order!</strong>
+                              </a>
+                          </div>
+                          <div class="col-sm-12 col-md-6 advitem">
+                              <a class="hair" href="https://www.getroman.com/hair-loss">
+                                  <h3 class="">Hair</h3>
+                                  <span class="text-link is-style-default p-large">Learn more <i
+                                          class="las la-angle-right"></i></span>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+      <section class="clean-block clean-info dark skin-care">
+        <div class="container">
+          <div class="block-heading">
+            <h2 class="text-info">Skin Care</h2>
+            <p class="text-center">
+              Get professional care and genuine prescription medication or
+              over-the-counter treatment delivered in unmarked packaging (if
+              approved).
+            </p>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="img-container">
+                <img
+                  class="img-thumbnail img-responsive"
+                  src="assets/img/scenery/image5.jpg"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="getting-started-info">
+                <div class="items">
+                  <div class="items-head">
+                    <p>UX DESIGN</p>
+                    <hr />
+                  </div>
+
+                  <ol class="gradient-list">
+                    <li>
+                      Lorem ipsum dolor sit amet, consectetur
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consectetur
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consect
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consecte cing elit.
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consectng elit.
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h3>Ready for Amazing Skin?</h3>
+            </div>
+            <div class="col-md-12 col-lg-6 mx-auto mt-4">
+              <button class="btn btn__size btn__style btn-lg btn-visit" type="button">
+                Start online visit
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="clean-block clean-info dark skin-care">
+        <div class="container">
+          <div class="block-heading">
+            <h2 class="text-info">Skin Care</h2>
+            <p class="text-center">
+              Get professional care and genuine prescription medication or
+              over-the-counter treatment delivered in unmarked packaging (if
+              approved).
+            </p>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="img-container">
+                <img
+                  class="img-thumbnail img-responsive"
+                  src="assets/img/scenery/image5.jpg"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="getting-started-info">
+                <div class="items">
+                  <div class="items-head">
+                    <p>UX DESIGN</p>
+                    <hr />
+                  </div>
+
+                  <ol class="gradient-list">
+                    <li>
+                      Lorem ipsum dolor sit amet, consectetur
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consectetur
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consect
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consecte cing elit.
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consectng elit.
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-12  text-center">
+              <h3>Ready for Amazing Skin?</h3>
+            </div>
+            <div class="col-md-12 col-lg-6 mx-auto mt-4">
+              <button class="btn  btn__size btn__style btn-lg btn-visit" type="button">
+                Start online visit
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="clean-block features"
+      >
+        <div class="container">
+          <div class="block-heading">
+            <h2 class="text-info">How It Works</h2>
+            <p></p>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div  class="mb-3 dot__left1"
+              >
+                <div class="dot__width"></div>
+                <div class="number">1</div>
+                <div class="dot-style"></div>
+              </div>
+              <div class="feature-box">
+                <i class="icon-star icon  mt-5 ml-3"></i>
+                <h4>Bootstrap 4</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  quam urna, dignissim nec auctor in, mattis vitae leo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div  class="mb-3 dot__left2"
+              >
+                <div class="dot-style"></div>
+                <div class="number">2</div>
+                <div class="dot-style"></div>
+              </div>
+              <div class="feature-box">
+                <i class="icon-pencil icon  mt-5 ml-3"></i>
+                <h4>Customizable</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  quam urna, dignissim nec auctor in, mattis vitae leo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-3 dot__left3">
+                <div class="dot-style"></div>
+                <div class="number">3</div>
+                <div class="dot__width"></div>
+              </div>
+              <div class="feature-box">
+                <i class="icon-pencil icon mt-5 ml-3"></i>
+                <h4>Customizable</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  quam urna, dignissim nec auctor in, mattis vitae leo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container"><div class="row">
+          <div class="col-sm-12 col-lg-6 mt-3">
+            <a
+              class="btn__style btn__color mt-3"
+              href="#"
+              data-toggle="modal"
+              data-target="ro-modal-3886"
+              >Get Products</a
+            >
+          </div>
+          <div class="col-sm-12 col-lg-6 mt-3">
+            <a
+              class="btn__style btn__color mt-3"
+              href="#"
+              data-toggle="modal"
+              data-target="ro-modal-3886"
+              >Start online visit</a
+            >
+          </div>
+        </div>
+      
+      </section>
+      <section class="clean-block slider dark">
+        <div class="container">
+          <div class="block-heading">
+            <h2 class="text-info">Our Mission</h2>
+            <p>
+              <strong
+                >To make high-quality care readily available and
+                convenient.</strong
+              >
+            </p>
+          </div>
+          <div class="carousel slide carosel__size" data-ride="carousel" id="carousel-1">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  class="w-100 d-block"
+                  src="assets/img/scenery/image4.jpg"
+                  alt="Slide Image"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="w-100 d-block"
+                  src="assets/img/scenery/image4.jpg"
+                  alt="Slide Image"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="w-100 d-block"
+                  src="assets/img/scenery/image4.jpg"
+                  alt="Slide Image"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="w-100 d-block"
+                  src="assets/img/scenery/image6.jpg"
+                  alt="Slide Image"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="w-100 d-block"
+                  src="assets/img/scenery/image6.jpg"
+                  alt="Slide Image"
+                />
+              </div>
+            </div>
+            <div>
+              <a
+                class="carousel-control-prev"
+                href="#carousel-1"
+                role="button"
+                data-slide="prev"
+                ><span class="carousel-control-prev-icon"></span
+                ><span class="sr-only">Previous</span></a
+              ><a
+                class="carousel-control-next"
+                href="#carousel-1"
+                role="button"
+                data-slide="next"
+                ><span class="carousel-control-next-icon"></span
+                ><span class="sr-only">Next</span></a
+              >
+            </div>
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carousel-1"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#carousel-1" data-slide-to="1"></li>
+              <li data-target="#carousel-1" data-slide-to="2"></li>
+              <li data-target="#carousel-1" data-slide-to="3"></li>
+              <li data-target="#carousel-1" data-slide-to="4"></li>
+            </ol>
+          </div>
+            <div class="row mt-5">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <div class="col-sm-12  col-md-7 col-lg-7 m-0 ">
+                    <h2 class="mt-3 mb-2 text__color">
+                      Ready to start your online visit?
+                    </h2>
+        
+                    <p class="mt-3 mb-3">
+                      If something is bothering you, we want to help. Complete an online
+                      visit to get started.
+                    </p>
+                  </div>
+    
+                  <div class="col-sm-12 col-md-5 col-lg-5 m-0 p-3">
+                    <a
+                      class="btn__style btn__color pt-4 pb-4"
+                      href="#"
+                      data-toggle="modal"
+                      data-target="ro-modal-3886"
+                      >Start online visit</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card-content">
+                  <div class="center">
+                    <img
+                      alt=""
+                      class="icon__size"
+                      src="https://www.getroman.com/wp-content/uploads/2019/08/lightning@2x.png"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p class="text-center">Free 2-day shipping</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card-content">
+                  <div class="center">
+                    <img
+                      alt=""
+                      class="icon__size"
+                      src="https://www.getroman.com/wp-content/uploads/2019/08/mobile@2x.png"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p class="text-center">Transparency</p>
+                </div>
+              </div><div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card-content">
+                  <div class="center">
+                    <img
+                      alt=""
+                      class="icon__size"
+                      src="https://www.getroman.com/wp-content/uploads/2019/08/break-up@2x.png"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p class="text-center">Cancel anytime</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card-content">
+                  <div class="center">
+                    <img
+                      alt=""
+                      class="icon__size"
+                      src="https://www.getroman.com/wp-content/uploads/2019/08/shield@2x-1.png"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p class="text-center">Free follow-ups</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section class="clean-block about-us">
+        <div class="container">
+          <div class="block-heading">
+            <h2 class="text-info">The Experts</h2>
+            <p>
+              <strong
+                >We have some of the best experts available just for your
+                care.</strong
+              ><br />
+            </p>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-4 col-lg-4 mt-2">
+              <div class="card clean-card text-center">
+                <img
+                  class="card-img-top w-100 d-block"
+                  src="assets/img/avatars/avatar1.jpg"
+                />
+                <div class="card-body info">
+                  <h4 class="card-title">John Smith</h4>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 mt-2">
+              <div class="card clean-card text-center">
+                <img
+                  class="card-img-top w-100 d-block"
+                  src="assets/img/avatars/avatar2.jpg"
+                />
+                <div class="card-body info">
+                  <h4 class="card-title">Robert Downturn</h4>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 mt-2">
+              <div class="card clean-card text-center">
+                <img
+                  class="card-img-top w-100 d-block"
+                  src="assets/img/avatars/avatar3.jpg"
+                />
+                <div class="card-body info">
+                  <h4 class="card-title">Ally Sanders</h4>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <h5>Get started</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Sign up</a></li>
+              <li><a href="#">Downloads</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>About us</h5>
+            <ul>
+              <li><a href="#">Company Information</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Support</h5>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help desk</a></li>
+              <li><a href="#">Forums</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Legal</h5>
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2021 Copyright Text</p>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+
+    <script>
+      window.onscroll = () => {
+        const nav = document.querySelector("#navbar");
+        if (this.scrollY <= 10) nav.classList.remove("scroll");
+        else nav.classList.add("scroll");
+      };
+    </script>
+  </body>
+</html>
